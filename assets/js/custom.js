@@ -827,7 +827,7 @@
       drag: true
     });
 
-    // Solutions: Environment slider (arrows + drag + autoplay)
+    // Solutions: Environment slider (arrows drag + autoplay)
     initTrackSlider({
       root: '#solEnvSlider',
       track: '.sol-env-track',
