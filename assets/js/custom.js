@@ -1,18 +1,8 @@
-/* ==========================================================================
-   COMBINED SCRIPT (duplicates removed)
-   0. Shared helpers  ($, $$, animateCount)
-   1. Site basics     (header, dropdown, search, Swiper sliders, reveal, counters, enquiry form)
-   2. Blog page       (filter + search + pagination, newsletter)
-   3. Product enquiry prefill
-   4. Page effects    (modal/home enquiry, progress bar, About counters,
-                       scroll-reveal engine, track sliders, contact captcha)
-   ========================================================================== */
+
 (function () {
   'use strict';
 
-  /* ======================================================================
-     0. SHARED HELPERS
-     ====================================================================== */
+  /* ================= SHARED HELPERS===================== */
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -30,9 +20,7 @@
     requestAnimationFrame(step);
   }
 
-  /* ======================================================================
-     1. SITE BASICS
-     ====================================================================== */
+  /* =======================SITE BASICS============================== */
   (function () {
     var header = $('#siteHeader');
     var toTop = $('#toTop');
@@ -449,12 +437,7 @@
     });
   })();
 
-  /* ======================================================================
-     3. PRODUCT ENQUIRY PREFILL
-     Any element with  data-open-enquiry data-product-name="X"  opens the
-     enquiry modal with product X already selected. Without JS/Bootstrap the
-     link falls back to its href.
-     ====================================================================== */
+  /* ===========PRODUCT ENQUIRY PREFILLAny element with  data-open-enquiry data-product-name="X"  opens theenquiry modal with product X already selected. Without JS/Bootstrap thelink falls back to its href.=============================== */
   (function () {
     var modalEl = document.getElementById('enquiryModal');
     if (!modalEl) return;
@@ -502,9 +485,7 @@
     });
   })();
 
-  /* ======================================================================
-     4. PAGE EFFECTS (run after the DOM is ready)
-     ====================================================================== */
+  /* ================ PAGE EFFECTS (run after the DOM is ready)============================== */
   document.addEventListener('DOMContentLoaded', function () {
 
     // Show the enquiry prompt once per browser session; explicit triggers always reopen it.
@@ -529,11 +510,7 @@
       }
     }
 
-    // ==========================================
-    // FINISHING EFFECTS
-    //    - Scroll progress bar
-    //    - Number counters (About stats band)
-    // ==========================================
+    // ================FINISHING EFFECTS Scroll progress bar  - Number counters (About stats band)=======================
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const forceAnim = /[?&]anim=1/.test(window.location.search);   // add ?anim=1 to the URL to force animations
 
@@ -602,10 +579,7 @@
 
     // ==========================================
     // SCROLL-REVEAL ENGINE  [ALL PAGES]
-    //    ONE function, used by About / Solutions / Industries / Contact.
-    //    Each map row: [selector, animation class, stagger step (s), columns per row (optional)]
-    //    Animation classes: sr-up | sr-left | sr-right | sr-zoom | sr-fade
-    //    To animate something new, just add one row to the map below.
+    //    ONE function, used by About / Solutions / Industries / Contact.   
     // ==========================================
     function initReveal(map) {
       if ((reduceMotion && !forceAnim) || !('IntersectionObserver' in window)) {
@@ -735,18 +709,7 @@
       ['.ct-cta', 'sr-right', 0]
     ]));
 
-    // ==========================================
-    // TRACK SLIDER ENGINE  [ALL PAGES]
-    //    ONE function for every scroll-snap slider.
-    //    Options:
-    //      root      (required) wrapper selector
-    //      track     (required) scrolling element inside root
-    //      slide     (required) single slide inside track
-    //      autoplay  ms between slides, 0 = off
-    //      dots      selector of dots wrapper inside root (optional)
-    //      prev/next selectors of arrow buttons, anywhere in document (optional)
-    //      drag      true = mouse drag to scroll (optional)
-    // ==========================================
+    // =============TRACK SLIDER ENGINE  [ALL PAGES]=====================
     function initTrackSlider(cfg) {
       const root = document.querySelector(cfg.root);
       if (!root) return;
@@ -875,9 +838,7 @@
       autoplay: 2500
     });
 
-    // ==========================================
-    // CONTACT PAGE - CAPTCHA
-    // ==========================================
+    // ===================CONTACT PAGE - CAPTCHA================
     (function () {
       const canvas = document.getElementById('ctCaptchaCanvas');
       if (!canvas) return;
@@ -956,7 +917,7 @@
           input.focus();
           return;
         }
-        setTimeout(function () { reset(''); }, 800); // new code after submit
+        setTimeout(function () { reset(''); }, 800); 
       });
 
       draw();

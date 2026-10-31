@@ -141,7 +141,7 @@
             <div class="col-md-6 post-col" data-cat="product-guide" data-search="types of fire extinguishers and their uses a detailed overview of the different types of fire extinguishers and where to use them for maximum effectiveness. product guide">
               <article class="post-card">
                 <a class="post-thumb" href="blog-details.php?slug=types-of-fire-extinguishers" tabindex="-1" aria-hidden="true">
-                  <img src="assets/images/Industrial%20Fire%20Safety%20Inspection.png" alt="" loading="lazy">
+                      <img src="assets/images/Industrial%20Fire%20Safety%20Inspection.png" alt="" loading="lazy">
                 </a>
                 <div class="post-meta">
                   <span class="post-tag">Product Guide</span>
